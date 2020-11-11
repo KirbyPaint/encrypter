@@ -11,7 +11,7 @@ _The purpose of this website is to demonstrate an understanding of JavaScript fu
 ## Setup/Installation Requirements
 
 * _Tested in the most recent Firefox update as of 2020-11-10_
-* _Try it here: _
+* _Try it here: https://kirbypaint.github.io/encoding/_
 
 ## Known Bugs
 
