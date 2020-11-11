@@ -17,18 +17,33 @@ function reverseTwoCharacters(input) {             // Function simply to reverse
   return newString;
 }
 
-function reverseFirstLastCaps(input) {         // Function to call the prev two functions
-  const toReverse = this.firstLastCaps(input); // Calls first function
+function reverseFirstLastCaps(input) {                 // Function to call the prev two functions
+  const toReverse = this.firstLastCaps(input);         // Calls first function
   return input + this.reverseTwoCharacters(toReverse); // Calls second function
 }
 
-$(document).ready(function() {
-  $("form#firstLastCaps").submit(function(event) {
-    event.preventDefault();
-    //const number1 = parseInt($("#firstLastCaps1").val());
-    const number1 = $("#firstLastCaps1").val();
-    //const number2 = parseInt($("#firstLastCaps2").val());
-    const result = reverseFirstLastCaps(number1); // this is the function that is called, that when the button is clicked it will affect the webpage
-    $("#output").text(result);
+function middleToFirst(input) {                          // Adds middle character to beginning of string
+  const stringLength = input.length;                     // gets length of entire string
+  const halfStringLength = Math.floor(stringLength / 2); // determines half string length (rounded down)  
+  const charAtHalf = input.charAt(halfStringLength);     // gets middle character in string (rounded down)  
+  return charAtHalf + this.reverseFirstLastCaps(input);  // concatenates middle character to beginning of encrypted string
+}
+
+function reverseString(input) {
+  const testString = this.middleToFirst(input);      // Performs first three functions
+  var newString = "";                                // new string for the reversed characters to load into
+  for (var i = testString.length - 1; i >= 0; i--) { // backwards array, grab characters in reverse 
+    newString += testString[i];                      // append character to string
+  }
+
+  return newString;
+}
+
+$(document).ready(function() {                     // This I would love to get full understanding of
+  $("form#firstLastCaps").submit(function(event) { //
+    event.preventDefault();                        //
+    const userInput = $("#firstLastCaps1").val();  //
+    const result = reverseString(userInput);       // this is the function that is called, that when the button is clicked it will affect the webpage
+    $("#output").text(result);                     //
   });
 });
