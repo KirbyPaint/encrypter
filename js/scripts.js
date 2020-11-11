@@ -4,24 +4,21 @@ function firstLastCaps(input) {
   const lastChar = input.charAt(stringLength - 1); // gets last character in string
   const lastCaps = lastChar.toUpperCase() // last character to upper
   const middleString = input.slice(1, (stringLength - 1)); // all characters in string EXCEPT first and last
-  const newString = firstCaps + middleString + lastCaps; // concatenates
-
+  const newString = firstCaps + lastCaps; // concatenates
+  // optimize later?
   return newString;
 }
 
-/**
-function subtract(number1, number2) {
-  return number1 - number2;
-}
+function reverseFirstLastCaps(input) {
+  const firstCaps = input.charAt(0).toUpperCase() // converts first character to upper
+  const stringLength = input.length; // gets length of entire string
+  const lastChar = input.charAt(stringLength - 1); // gets last character in string
+  const lastCaps = lastChar.toUpperCase() // last character to upper
+  const middleString = input.slice(1, (stringLength - 1)); // all characters in string EXCEPT first and last
+  const newString = lastCaps + firstCaps; // concatenates
 
-function multiply(number1, number2) {
-  return number1 * number2;
+  return newString;
 }
-
-function divide(number1, number2) {
-  return number1 / number2;
-}
-**/
 
 $(document).ready(function() {
   $("form#firstLastCaps").submit(function(event) {
@@ -29,7 +26,7 @@ $(document).ready(function() {
     //const number1 = parseInt($("#firstLastCaps1").val());
     const number1 = $("#firstLastCaps1").val();
     //const number2 = parseInt($("#firstLastCaps2").val());
-    const result = firstLastCaps(number1);
+    const result = reverseFirstLastCaps(number1); // this is the function that is called, that when the button is clicked it will affect the webpage
     $("#output").text(result);
   });
 });
