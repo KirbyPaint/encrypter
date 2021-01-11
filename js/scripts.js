@@ -1,10 +1,6 @@
 function firstLastCaps(input) {
-  const firstCaps = input.charAt(0).toUpperCase()          // converts first character to upper
-  const stringLength = input.length;                       // gets length of entire string
-  const lastChar = input.charAt(stringLength - 1);         // gets last character in string
-  const lastCaps = lastChar.toUpperCase()                  // last character to upper
-  const newString = firstCaps + lastCaps;                  // concatenates
-  // optimize later?
+  const stringLength = input.length;                                                              // gets length of entire string
+  const newString = input.charAt(0).toUpperCase() + input.charAt(stringLength - 1).toUpperCase(); // concatenates
   return newString;
 }
 
@@ -38,7 +34,7 @@ function reverseString(input) {
   return newString;
 }
 
-$(document).ready(function() {                     // This I would love to get full understanding of
+$(document).ready(function() {                     // Waits until the page is loaded before it functions
   $("form#firstLastCaps").submit(function(event) { //
     event.preventDefault();                        //
     const userInput = $("#firstLastCaps1").val();  //
