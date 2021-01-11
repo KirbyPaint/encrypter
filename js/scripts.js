@@ -1,14 +1,11 @@
 function firstLastCaps(input) {
-  const stringLength = input.length;                                                              // gets length of entire string
-  const newString = input.charAt(0).toUpperCase() + input.charAt(stringLength - 1).toUpperCase(); // concatenates
+  const stringLength = input.length; // gets length of entire string
+  const newString = input.charAt(0).toUpperCase() + input.charAt(stringLength - 1).toUpperCase();
   return newString;
 }
 
-function reverseTwoCharacters(input) {             // Function simply to reverse two characters
-  const firstCaps = input.charAt(0).toUpperCase(); // converts first character to upper
-  const lastCaps = input.charAt(1).toUpperCase();  // converts last character to upper
-  const newString = lastCaps + firstCaps;          // concatenates
-
+function reverseTwoCharacters(input) {
+  const newString = input.charAt(1).toUpperCase() + input.charAt(0).toUpperCase();
   return newString;
 }
 
@@ -30,7 +27,6 @@ function reverseString(input) {
   for (var i = testString.length - 1; i >= 0; i--) { // backwards array, grab characters in reverse 
     newString += testString[i];                      // append character to string
   }
-
   return newString;
 }
 
