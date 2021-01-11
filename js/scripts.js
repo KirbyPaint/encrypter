@@ -3,7 +3,6 @@ function firstLastCaps(input) {
   const stringLength = input.length;                       // gets length of entire string
   const lastChar = input.charAt(stringLength - 1);         // gets last character in string
   const lastCaps = lastChar.toUpperCase()                  // last character to upper
-  const middleString = input.slice(1, (stringLength - 1)); // all characters in string EXCEPT first and last
   const newString = firstCaps + lastCaps;                  // concatenates
   // optimize later?
   return newString;
